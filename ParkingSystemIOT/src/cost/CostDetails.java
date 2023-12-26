@@ -10,6 +10,7 @@ public class CostDetails {
      }
      
      public double totalCost() {
+    	 
     	 return totalCost;
      }
      public Duration getDuration() {
