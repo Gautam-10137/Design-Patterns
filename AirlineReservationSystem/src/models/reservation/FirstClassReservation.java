@@ -12,6 +12,11 @@ public class FirstClassReservation extends Reservation {
 	}
 	
 	public void book() {
-		System.out.println("Booking first class reservation for: "+getCustomer().getName());
+		if(flight.reserveSeat(seat.getSeatNumber())) {
+			System.out.println("Booking First reservation for: "+getCustomer().getName());
+		}
+		else {
+			System.out.println("Seat "+seat.getSeatNumber()+" is already reserved");
+		}
 	}
 }

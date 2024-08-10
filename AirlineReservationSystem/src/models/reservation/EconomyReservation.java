@@ -12,7 +12,12 @@ public class EconomyReservation extends Reservation {
 	}
 	
 	public void book() {
-		System.out.println("Booking economy reservation for: "+getCustomer().getName());
+		if(flight.reserveSeat(seat.getSeatNumber())) {
+			System.out.println("Booking economy reservation for: "+getCustomer().getName());
+		}
+		else {
+			System.out.println("Seat "+seat.getSeatNumber()+" is already reserved");
+		}
 	}
 }
 

@@ -9,6 +9,7 @@ public abstract class ReservationDecorator extends Reservation{
 	}
 	@Override
 	public void book() {
+		decoratedReservation.book();
 		System.out.println(decoratedReservation.getCustomer().getName());
 	}
 }

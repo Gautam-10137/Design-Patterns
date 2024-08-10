@@ -6,10 +6,10 @@ import models.observer.Flight;
 import models.strategy.PricingStrategy;
 
 public abstract class Reservation {
-	private Customer customer;
-	private Flight flight;
-	private Seat seat;
-	private PricingStrategy pricingStrategy;
+	protected Customer customer;
+	protected Flight flight;
+	protected Seat seat;
+	protected PricingStrategy pricingStrategy;
 
 	public Reservation(Customer customer, Flight flight, Seat seat,PricingStrategy pricingStrategy) {
 		this.customer=customer;
@@ -54,6 +54,11 @@ public abstract class Reservation {
 	
 	public double getPrice(double basePrice) {
 		return pricingStrategy.calculatePrice(basePrice);
+	}
+	
+	public void cancel() {
+		flight.cancelSeatReservation(seat.getSeatNumber());
+		System.out.println("Rservation for customer:"+customer.getName()+" for seat:"+seat.getSeatNumber()+" has been cancelled");
 	}
 
 }

@@ -12,6 +12,11 @@ public class BusinessReservation extends Reservation{
 	}
 	
 	public void book() {
-		System.out.println("Booking business class reservation for: "+getCustomer().getName());
+		if(flight.reserveSeat(seat.getSeatNumber())) {
+			System.out.println("Booking Business reservation for: "+getCustomer().getName());
+		}
+		else {
+			System.out.println("Seat "+seat.getSeatNumber()+" is already reserved");
+		}
 	}
 }

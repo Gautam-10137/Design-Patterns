@@ -48,12 +48,12 @@ public class Flight implements notifiable {
 	
 	public void setFlightStatus(String flightStatus) {
 		this.flightStatus=flightStatus;
-		notifyAllObservers();
+		this.notifyAllObservers();
 	}
 	
 	public void notifyAllObservers() {
 		for(Customer customer:customers) {
-			customer.update(flightStatus);
+			customer.update(flightNumber,flightStatus);
 		}
 	}
 	

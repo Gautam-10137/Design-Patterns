@@ -17,8 +17,8 @@ public class Customer implements observer {
     	 return customerId;
      }
      
-     public void update(String status) {
-    	 System.out.println("Notifying: "+name+" of flight status:"+status);
+     public void update(String flightNumber,String status) {
+    	 System.out.println("Notifying: "+name+" of flight: "+flightNumber+" status:"+status);
      }
 
 }

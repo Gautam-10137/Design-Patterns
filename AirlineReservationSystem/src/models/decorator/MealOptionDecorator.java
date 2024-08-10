@@ -10,6 +10,7 @@ public class MealOptionDecorator extends ReservationDecorator {
 	
 	public void book() {
 		super.book();	
+		addMealOption();
 	}
 	
 	public void addMealOption() {
